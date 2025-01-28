@@ -3,4 +3,5 @@ WORKDIR /app
 COPY . .
 RUN corepack enable
 RUN yarn install
-CMD ["sleep", "infinity"]
+CMD ["yarn", "start"]
+EXPOSE 3000
