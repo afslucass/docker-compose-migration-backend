@@ -1,0 +1,14 @@
+{
+  "name": "vizinhos",
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --watch src -e ts --exec yarn start"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
