@@ -11,3 +11,8 @@ tem q execultar em ambiente linux com docker, o yarn dersao 4 esta quebrando no 
 - docker run --detach -p 3000:3000 vizinhos
 - docker stop <name>
 - docker exec -it <name> sh
+
+# Comandos Docker Compose
+
+- docker-compose up --build -d
+- docker-compose down

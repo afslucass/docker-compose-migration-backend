@@ -1,5 +1,15 @@
-import express from "express";
 import "dotenv/config";
+import express from "express";
+
+import AppDataSource from "./connection";
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization", err);
+  });
 
 const app = express();
 const PORT = process.env.PORT;
