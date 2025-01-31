@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 
 import AppDataSource from "./connection";
+import router from "./routes";
 
 AppDataSource.initialize()
   .then(() => {
@@ -13,6 +14,9 @@ AppDataSource.initialize()
 
 const app = express();
 const PORT = process.env.PORT;
+
+app.use(express.json());
+app.use(router);
 
 app.get("/", (req: any, res: any) => {
   res.send("Hello World!");

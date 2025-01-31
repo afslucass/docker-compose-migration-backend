@@ -7,6 +7,7 @@ const AppDataSource = new DataSource({
   username: process.env.DB_USER as any,
   password: process.env.DB_PASSWORD as any,
   database: process.env.DB_DATABASE as any,
+  entities: [`${__dirname}/**/*.entity.js`],
 });
 
 export default AppDataSource;
