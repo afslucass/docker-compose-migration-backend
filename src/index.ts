@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 
+import { errorHandler } from "./middleware/error-handler";
 import AppDataSource from "./connection";
 import router from "./routes";
 
@@ -17,8 +18,9 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(router);
+app.use(errorHandler);
 
-app.get("/", (req: any, res: any) => {
+app.get("/", (_req: any, res: any) => {
   res.send("Hello World!");
 });
 
