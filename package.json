@@ -3,7 +3,8 @@
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "lint": "eslint src/**/*.ts",
-    "build": "tsc",
+    "migrate": "typeorm-ts-node-commonjs migration:run -d src/connection.ts",
+    "build": "tsc && yarn migrate",
     "start": "yarn build && node dist/index.js",
     "dev": "ts-node src/index.ts",
     "dev:hot-reload": "nodemon --watch src -e ts --exec yarn dev"
